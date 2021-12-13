@@ -5,7 +5,7 @@ def import_text_file(filename):
     with open(filename, 'r') as file:
         data = list(map(int,file.readlines()))
     return data
-
+    
 def part_1(data):
     # n is the count of measurements that are larger than the previous measurement
     n = 0 
