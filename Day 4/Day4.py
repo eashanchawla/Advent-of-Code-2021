@@ -89,19 +89,18 @@ def part_2(filename: str, chunk_size: int) -> int:
     # checking board objects
     bingo_answers = list()
     for number in number_selections:
-        for index, board in enumerate(board_objects):
+        for _, board in enumerate(board_objects):
             bingo_check, answer = board.mark_target(number)
             if bingo_check:
                 bingo_answers.append(answer)
+                board_objects.remove(board)
                 break
         
-        if bingo_check:
-            board_objects.remove(board)
-
     print('-'*40)
     print('Part 2 answer:', bingo_answers[-1])
     print('-'*40)
 
+    print(bingo_answers)
     return None
 
 
